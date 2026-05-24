@@ -1,0 +1,16 @@
+[serve]
+interface = "127.0.0.1"
+port = 8080 # The port you open in your browser
+
+[watch]
+watch = ["src"]
+
+[[proxy]]
+rewrite = "/api/"
+backend = "http://127.0.0.1:8000/api/"
+
+[profile.dev]
+debug = true
+
+[profile.release]
+debug = false
